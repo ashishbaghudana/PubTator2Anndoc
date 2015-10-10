@@ -1,4 +1,4 @@
-# PubTator2TagTog
+# PubTator2Anndoc
 
 Convert annotations in PubTator format to TagTog format.
 
@@ -19,15 +19,15 @@ The PubTator format uses the following format:
 ```
 
 where:
-    * The first line contains the title of the paper.
-    * The second line contains the abstract of the paper.
-    * The subsequent lines contain the annotations for the entities in a tab separated format:
-      * PMID
-      * Start Offset
-      * End Offset
-      * Mention (entity text)
-      * Type of Entity
-      * Identifier (normalized form)
+* The first line contains the title of the paper.
+* The second line contains the abstract of the paper.
+* The subsequent lines contain the annotations for the entities in a tab separated format:
+    * PMID
+    * Start Offset
+    * End Offset
+    * Mention (entity text)
+    * Type of Entity
+    * Identifier (normalized form)
 
 For example,
 
