@@ -239,10 +239,3 @@ class PubTator2TagTog():
 
         # Write JSON to file
         self.__to_json(pmid, tagtog_json, output_dir)
-
-def main():
-    pub2tag = PubTator2TagTog(PubTator2TagTog.GNORMPLUS_ENTITY_CLASSES)
-    pub2tag.parse('/home/ashish/mthesis-ashish/miscellaneous/RESTfulAPI.client/Python/result.txt')
-
-if __name__=='__main__':
-    main()
