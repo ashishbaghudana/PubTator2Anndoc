@@ -1,0 +1,86 @@
+10196196|t|SPI-B activates transcription via a unique proline, serine, and threonine domain and exhibits DNA binding affinity differences from PU.1.
+10196196|a|SPI-B is a B lymphocyte-specific Ets transcription factor that shares a high degree of similarity with PU.1/SPI-1. In direct contrast to PU.1(-/-) mice that die in utero and lack monocytes, neutrophils, B cells, and T cells, Spi-B-/- mice are viable and exhibit a severe B cell proliferation defect. Since PU.1 is expressed at wild type levels in Spi-B-/- B cells, the mutant mice provide genetic evidence that SPI-B and PU.1 have at least some non-redundant roles in B lymphocytes. To begin to understand the molecular basis for these defects, we delineated functional domains of SPI-B for comparison to those of PU.1. By using a heterologous co-transfection system, we identified two independent transactivation domains in the N terminus of SPI-B. Interestingly, only one of these domains (amino acids 31-61), a proline/serine/threonine-rich region, unique among Ets proteins, is necessary for transactivation of the immunoglobulin lambda light chain enhancer. This transactivation motif is in marked contrast to PU.1, which contains acidic and glutamine-rich domains. In addition, we describe a functional PU.1 site within the c-FES promoter which SPI-B fails to bind efficiently and transactivate. Finally, we show that SPI-B interacts with the PU.1 cofactors Pip, TBP, c-Jun and with lower affinity to nuclear factor interleukin-6beta and retinoblastoma. Taken together, these data suggest that SPI-B binds DNA with a different affinity for certain sites than PU.1 and harbors different transactivation domains. We conclude that SPI-B may activate unique target genes in B lymphocytes and interact with unique, although currently unidentified, cofactors.
+10196196	0	5	SPI-B	Gene	272382
+10196196	132	136	PU.1	Gene	20375
+10196196	138	143	SPI-B	Gene	272382
+10196196	241	245	PU.1	Gene	20375
+10196196	246	251	SPI-1	Gene	20375
+10196196	275	279	PU.1	Gene	20375
+10196196	285	289	mice	Species	10090
+10196196	363	368	Spi-B	Gene	272382
+10196196	372	376	mice	Species	10090
+10196196	444	448	PU.1	Gene	20375
+10196196	514	518	mice	Species	10090
+10196196	549	554	SPI-B	Gene	272382
+10196196	559	563	PU.1	Gene	20375
+10196196	719	724	SPI-B	Gene	272382
+10196196	752	756	PU.1	Gene	20375
+10196196	881	886	SPI-B	Gene	272382
+10196196	1153	1157	PU.1	Gene	20375
+10196196	1247	1251	PU.1	Gene	20375
+10196196	1268	1273	c-FES	Gene	14159
+10196196	1289	1294	SPI-B	Gene	272382
+10196196	1362	1367	SPI-B	Gene	272382
+10196196	1387	1391	PU.1	Gene	20375
+10196196	1402	1405	Pip	Gene	18716
+10196196	1407	1410	TBP	Gene	21374
+10196196	1412	1417	c-Jun	Gene	16476
+10196196	1538	1543	SPI-B	Gene	272382
+10196196	1603	1607	PU.1	Gene	20375
+10196196	1672	1677	SPI-B	Gene	272382
+
+10207087|t|Functional and physical interactions between AML1 proteins and an ETS protein, MEF: implications for the pathogenesis of t(8;21)-positive leukemias.
+10207087|a|The AML1 and ETS families of transcription factors play critical roles in hematopoiesis; AML1, and its non-DNA-binding heterodimer partner CBFbeta, are essential for the development of definitive hematopoiesis in mice, whereas the absence of certain ETS proteins creates specific defects in lymphopoiesis or myelopoiesis. The promoter activities of numerous genes expressed in hematopoietic cells are regulated by AML1 proteins or ETS proteins. MEF (for myeloid ELF-1-like factor) is a recently cloned ETS family member that, like AML1B, can strongly transactivate several of these promoters, which led us to examine whether MEF functionally or physically interacts with AML1 proteins. In this study, we demonstrate direct interactions between MEF and AML1 proteins, including the AML1/ETO fusion protein, in t(8;21)-positive acute myeloid leukemia (AML) cells. Using mutational analysis, we identified a novel ETS-interacting subdomain (EID) in the C-terminal portion of the Runt homology domain (RHD) in AML1 proteins and determined that the N-terminal region of MEF was responsible for its interaction with AML1. MEF and AML1B synergistically transactivated an interleukin 3 promoter reporter gene construct, yet the activating activity of MEF was abolished when MEF was coexpressed with AML1/ETO. The repression by AML1/ETO was independent of DNA binding but depended on its ability to interact with MEF, suggesting that AML1/ETO can repress genes not normally regulated by AML1 via protein-protein interactions. Interference with MEF function by AML1/ETO may lead to dysregulation of genes important for myeloid differentiation, thereby contributing to the pathogenesis of t(8;21) AML.
+10207087	79	82	MEF	Gene	56501
+10207087	288	295	CBFbeta	Gene	12400
+10207087	362	366	mice	Species	10090
+10207087	594	597	MEF	Gene	56501
+10207087	603	628	myeloid ELF-1-like factor	Gene	56501
+10207087	774	777	MEF	Gene	56501
+10207087	893	896	MEF	Gene	56501
+10207087	935	938	ETO	Gene	12395
+10207087	1125	1145	Runt homology domain	DomainMotif	GeneID:56501,12395/PSSMID:109891
+10207087	1147	1150	RHD	DomainMotif	GeneID:56501,12395
+10207087	1214	1217	MEF	Gene	56501
+10207087	1265	1268	MEF	Gene	56501
+10207087	1392	1395	MEF	Gene	56501
+10207087	1415	1418	MEF	Gene	56501
+10207087	1445	1448	ETO	Gene	12395
+10207087	1473	1476	ETO	Gene	12395
+10207087	1553	1556	MEF	Gene	56501
+10207087	1579	1582	ETO	Gene	12395
+10207087	1684	1687	MEF	Gene	56501
+10207087	1705	1708	ETO	Gene	12395
+
+17197705|t|The transcriptional repressor GFI-1 antagonizes PU.1 activity through protein-protein interaction.
+17197705|a|Mice lacking the zinc finger transcriptional repressor protein GFI-1 are neutropenic. These mice generate abnormal immature myeloid cells exhibiting characteristics of both macrophages and granulocytes. Furthermore, Gfi-1(-/-) mice are highly susceptible to bacterial infection. Interestingly, Gfi-1(-/-) myeloid cells overexpress target genes of the PU.1 transcription factor such as the macrophage colony-stimulating factor receptor and PU.1 itself. We therefore determined whether GFI-1 modulates the transcriptional activity of PU.1. Our data demonstrate that GFI-1 physically interacts with PU.1, repressing PU.1-dependent transcription. This repression is functionally significant, as GFI-1 blocked PU.1-induced macrophage differentiation of a multipotential hematopoietic progenitor cell line. Retroviral expression of GFI-1 in primary murine hematopoietic progenitors increased granulocyte differentiation at the expense of macrophage differentiation. We interbred Gfi-1(+/-) and PU.1(+/-) mice and observed that heterozygosity at the PU.1 locus partially rescued the Gfi-1(-/-) mixed myeloid lineage phenotype, but failed to restore granulocyte differentiation. Our data demonstrate that GFI-1 represses PU.1 activity and that lack of this repression in Gfi-1(-/-) myeloid cells contributes to the observed mixed lineage phenotype.
+17197705	30	35	GFI-1	Gene	14581
+17197705	48	52	PU.1	Gene	20375
+17197705	99	103	Mice	Species	10090
+17197705	116	161	zinc finger transcriptional repressor protein	FamilyName	14581
+17197705	162	167	GFI-1	Gene	14581
+17197705	191	195	mice	Species	10090
+17197705	315	320	Gfi-1	Gene	14581
+17197705	326	330	mice	Species	10090
+17197705	393	398	Gfi-1	Gene	14581
+17197705	450	454	PU.1	Gene	20375
+17197705	538	542	PU.1	Gene	20375
+17197705	583	588	GFI-1	Gene	14581
+17197705	631	635	PU.1	Gene	20375
+17197705	663	668	GFI-1	Gene	14581
+17197705	695	699	PU.1	Gene	20375
+17197705	712	716	PU.1	Gene	20375
+17197705	790	795	GFI-1	Gene	14581
+17197705	804	808	PU.1	Gene	20375
+17197705	925	930	GFI-1	Gene	14581
+17197705	942	948	murine	Species	10090
+17197705	1072	1077	Gfi-1	Gene	14581
+17197705	1087	1091	PU.1	Gene	20375
+17197705	1097	1101	mice	Species	10090
+17197705	1142	1146	PU.1	Gene	20375
+17197705	1175	1180	Gfi-1	Gene	14581
+17197705	1296	1301	GFI-1	Gene	14581
+17197705	1312	1316	PU.1	Gene	20375
+17197705	1362	1367	Gfi-1	Gene	14581
+
+

@@ -4,13 +4,13 @@ from yattag import Doc
 from yattag import indent
 import json
 
-class PubTator2TagTog():
+class PubTator2Anndoc():
 
     GNORMPLUS_ENTITY_CLASSES = {'Gene': 'e_1', 'FamilyName': 'e_2',
                     'DomainMotif': 'e_3', 'Species': 'e_4'}
     """
     GNormPlus uses the entity classes Gene, Family Name, Domain Motif and
-    Species. They have been assigned TagTog equivalent classes e_1, e_2, e_3
+    Species. They have been assigned Anndoc equivalent classes e_1, e_2, e_3
     and e_4 respectively. Use your own entity class dictionary if the PubTator
     format is different.
     """
@@ -30,15 +30,15 @@ class PubTator2TagTog():
             entity_classes (dict): A dictionary of entity classes
                         (key-value pairs) where the key corresponds to the
                         class in PubTator format, and the value corresponds to
-                        the class in TagTog. For an example, see
-                        PubTatot2TagTog.GNORMPLUS_ENTITY_CLASSES
+                        the class in Anndoc. For an example, see
+                        PubTatot2Anndoc.GNORMPLUS_ENTITY_CLASSES
         """
         self.entity_classes = entity_classes
 
     def __to_html(self, pmid, title, abstract, output_dir):
-        """Generate HTML file for TagTog
+        """Generate HTML file for Anndoc
 
-        Write a HTML file required for TagTog, formatted according to TagTog's
+        Write a HTML file required for Anndoc, formatted according to TagTog's
         standards that can be viewed at the link below.
         https://github.com/jmcejuela/tagtog-doc/wiki
 
@@ -108,22 +108,22 @@ class PubTator2TagTog():
         import uuid
         return str(uuid.uuid4().hex)+':'+pmid
 
-    def __to_json(self, pmid, tagtog_json, output_dir):
-        """Write TagTog JSON Object to file
+    def __to_json(self, pmid, anndoc_json, output_dir):
+        """Write Anndoc JSON Object to file
 
-        Write the generated TagTog JSON objecto to file. By default, the output
-        file is PMID.ann.json. The JSON format for TagTog can be viewed at
+        Write the generated Anndoc JSON objecto to file. By default, the output
+        file is PMID.ann.json. The JSON format for Anndoc can be viewed at
         https://github.com/jmcejuela/tagtog-doc/wiki/ann.json
 
         Args:
             pmid (str): The Pubmed identifier of the document.
-            tagtog_json (dict): A dictionary containing TagTog compatible JSON
+            anndoc_json (dict): A dictionary containing Anndoc compatible JSON
                                 object.
             output_file (Optional[str]): Path to output file. Defaults to None.
         """
         try:
             with open(join(output_dir, pmid+'.ann.json'), 'w') as fw:
-                fw.write(json.dumps(tagtog_json, sort_keys=True, indent=2, separators=(',', ': ')))
+                fw.write(json.dumps(anndoc_json, sort_keys=True, indent=2, separators=(',', ': ')))
         except IOError as e:
             print 'I/O Error({0}): {1}'.format(e.errno, e.strerror)
             raise
@@ -196,16 +196,16 @@ class PubTator2TagTog():
         self.__to_html(pmid, title, abstract, output_dir)
 
         # Generate JSON
-        tagtog_json = {}
-        tagtog_json['annotatable'] = {}
-        tagtog_json['annotatable']['parts'] = ["s1h1", "s2h1", "s2p1"]
-        tagtog_json['anncomplete'] = False
-        tagtog_json['sources'] = []
-        tagtog_json['sources'].append({"name": "MEDLINE", "id": pmid,
+        anndoc_json = {}
+        anndoc_json['annotatable'] = {}
+        anndoc_json['annotatable']['parts'] = ["s1h1", "s2h1", "s2p1"]
+        anndoc_json['anncomplete'] = False
+        anndoc_json['sources'] = []
+        anndoc_json['sources'].append({"name": "MEDLINE", "id": pmid,
                         "url": "http://www.ncbi.nlm.nih.gov/pubmed/"+pmid})
-        tagtog_json['relations']=[]
-        tagtog_json['metas']={}
-        tagtog_json['entities']=[]
+        anndoc_json['relations']=[]
+        anndoc_json['metas']={}
+        anndoc_json['entities']=[]
 
         for i in range(2, len(lines)):
 
@@ -227,15 +227,15 @@ class PubTator2TagTog():
             if (line[0]==pmid):
                 entity["part"] = part
                 entity["offsets"] = [{"start": startOffset, "text": text}]
-            entity["confidence"] = {"prob": PubTator2TagTog.CONFIDENCE,
-                        "state": "", "who": [PubTator2TagTog.TAGGER]}
+            entity["confidence"] = {"prob": PubTator2Anndoc.CONFIDENCE,
+                        "state": "", "who": [PubTator2Anndoc.TAGGER]}
             entity['classId'] = self.entity_classes[line[4]]
 
             #TODO get normalization definition from TagTog
             entity["normalizations"] = {}
 
             # Append each entity to TagTog JSON Object
-            tagtog_json['entities'].append(entity)
+            anndoc_json['entities'].append(entity)
 
         # Write JSON to file
-        self.__to_json(pmid, tagtog_json, output_dir)
+        self.__to_json(pmid, anndoc_json, output_dir)
