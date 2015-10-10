@@ -183,10 +183,10 @@ class PubTator2TagTog():
         lines = entry.split('\n')
 
         # Get PMID
-        pmid = lines[0].split('|')[0]
+        pmid = lines[0].split('|')[0].rstrip()
 
         # Get title of the paper
-        title = lines[0].split('|')[2]
+        title = lines[0].split('|')[2].rstrip()
         cutoff = len(title)
 
         # Get abstract of the paper
@@ -216,8 +216,8 @@ class PubTator2TagTog():
             # Start offset
             startOffset = int(line[1])
             part = 's1h1'
-            if startOffset > cutoff:
-                startOffset -= cutoff
+            if startOffset >= cutoff:
+                startOffset -= cutoff + 1
                 part = 's2p1'
 
             # Entity text
