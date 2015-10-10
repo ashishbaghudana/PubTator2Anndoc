@@ -61,6 +61,8 @@ The Python script converts any PubTator file to Anndoc files by splitting them o
 
 #### Sample Script to Convert
 
+You can modify `convert.py` to fill in your entity classes and give the input file
+
 ```python
 from pubtator import PubTator2Anndoc
 
@@ -72,4 +74,6 @@ input_file = '.'
 
 pub2anndoc = PubTator2Anndoc(entity_classes)
 pub2anndoc.parse(input_file)
+# Use pub2anndoc.parse(input_file, output_dir) if you want the output_dir to be different from the input directory.
+
 ```
