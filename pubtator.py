@@ -1,5 +1,3 @@
-from os.path import isfile, isdir, join, dirname
-
 class PubTator2Anndoc():
 
     GNORMPLUS_ENTITY_CLASSES = {'Gene': 'e_1', 'FamilyName': 'e_2',
