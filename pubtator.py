@@ -1,8 +1,4 @@
-from os import listdir
-from os.path import isfile, join, dirname
-from yattag import Doc
-from yattag import indent
-import json
+from os.path import isfile, isdir, join, dirname
 
 class PubTator2Anndoc():
 
@@ -52,6 +48,10 @@ class PubTator2Anndoc():
                                         none.
 
         """
+        from yattag import Doc
+        from yattag import indent
+        from os.path import join
+
         doc, tag, text = Doc().tagtext()
 
         # Compute hashId (TODO find out what hashing is used, currently random)
@@ -121,9 +121,12 @@ class PubTator2Anndoc():
                                 object.
             output_file (Optional[str]): Path to output file. Defaults to None.
         """
+        from json import dumps
+        from os.path import join
+
         try:
             with open(join(output_dir, pmid+'.ann.json'), 'w') as fw:
-                fw.write(json.dumps(anndoc_json, sort_keys=True, indent=2, separators=(',', ': ')))
+                fw.write(dumps(anndoc_json, sort_keys=True, indent=2, separators=(',', ': ')))
         except IOError as e:
             print 'I/O Error({0}): {1}'.format(e.errno, e.strerror)
             raise
@@ -138,9 +141,17 @@ class PubTator2Anndoc():
         Args:
             input_file (str): Path to input file
         """
+        from os.path import isfile
+        from os.path import isdir
+        from os.path import join
+        from os import listdir
+
         try:
-            with open(input_file) as fp:
-                file_contents = fp.read()
+            if (isfile(input_file)):
+                with open(input_file) as fp:
+                    file_contents = fp.read()
+            elif (isdir(input_file)):
+                files_to_convert = [ join(input_file, f) for f in listdir(input_file) if isfile(f) ]
         except IOError as e:
             print 'I/O Error({0}): {1}'.format(e.errno, e.strerror)
             raise
