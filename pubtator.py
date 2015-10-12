@@ -75,7 +75,7 @@ class PubTator2Anndoc():
                 with tag('article'):
                     with tag('section', ('data-type', 'title')):
                         with tag('h2', id='s1h1'):
-                            text(title.replace(' ', '&nbsp;'))
+                            text(title)
                     with tag('section', ('data-type', 'abstract')):
                         with tag('h3', id='s2h1'):
                             text("Abstract")
