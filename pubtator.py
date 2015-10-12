@@ -15,7 +15,7 @@ class PubTator2Anndoc():
     # Update Confidence as per Tagger's performance
     CONFIDENCE = 1.0
 
-    def __init__(self, entity_classes):
+    def __init__(self, entity_classes, tagger='ml:GNormPlus', confidence=1.0):
         """Constructor
 
         Intialize the class with a dictionary of entity classes.
@@ -28,6 +28,8 @@ class PubTator2Anndoc():
                         PubTatot2Anndoc.GNORMPLUS_ENTITY_CLASSES
         """
         self.entity_classes = entity_classes
+        self.tagger = tagger
+        self.confidence = confidence
 
     def __to_html(self, pmid, title, abstract, output_dir):
         """Generate HTML file for Anndoc
@@ -73,7 +75,7 @@ class PubTator2Anndoc():
                 with tag('article'):
                     with tag('section', ('data-type', 'title')):
                         with tag('h2', id='s1h1'):
-                            text(title)
+                            text(title.replace(' ', '&nbsp;'))
                     with tag('section', ('data-type', 'abstract')):
                         with tag('h3', id='s2h1'):
                             text("Abstract")
@@ -124,7 +126,8 @@ class PubTator2Anndoc():
 
         try:
             with open(join(output_dir, pmid+'.ann.json'), 'w') as fw:
-                fw.write(dumps(anndoc_json, sort_keys=True, indent=2, separators=(',', ': ')))
+                fw.write(dumps(anndoc_json, sort_keys=True, indent=2,
+                        separators=(',', ': ')))
         except IOError as e:
             print 'I/O Error({0}): {1}'.format(e.errno, e.strerror)
             raise
@@ -142,6 +145,7 @@ class PubTator2Anndoc():
         from os.path import isfile
         from os.path import isdir
         from os.path import join
+        from os.path import dirname
         from os import listdir
 
         try:
@@ -236,8 +240,8 @@ class PubTator2Anndoc():
             if (line[0]==pmid):
                 entity["part"] = part
                 entity["offsets"] = [{"start": startOffset, "text": text}]
-            entity["confidence"] = {"prob": PubTator2Anndoc.CONFIDENCE,
-                        "state": "", "who": [PubTator2Anndoc.TAGGER]}
+            entity["confidence"] = {"prob": self.confidence,
+                        "state": "", "who": [self.tagger]}
             entity['classId'] = self.entity_classes[line[4]]
 
             #TODO get normalization definition from TagTog
