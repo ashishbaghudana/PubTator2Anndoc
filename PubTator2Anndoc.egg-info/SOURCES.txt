@@ -1,8 +1,0 @@
-README.rst
-setup.py
-PubTator2Anndoc.egg-info/PKG-INFO
-PubTator2Anndoc.egg-info/SOURCES.txt
-PubTator2Anndoc.egg-info/dependency_links.txt
-PubTator2Anndoc.egg-info/entry_points.txt
-PubTator2Anndoc.egg-info/requires.txt
-PubTator2Anndoc.egg-info/top_level.txt
