@@ -1,0 +1,7 @@
+build/
+dist/
+PubTator2Anndoc.egg-info/
+__pycache__/
+sample/
+README.rst
+*.pyc
